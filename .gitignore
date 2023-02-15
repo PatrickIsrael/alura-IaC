@@ -4,9 +4,11 @@
 ### Terraform ###
 # Local .terraform directories
 **/.terraform/*
+**/aws/*
 
 # .tfstate files
 *.tfstate
 *.tfstate.*
 
 *.pem
+*.pem*

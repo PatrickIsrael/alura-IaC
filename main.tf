@@ -9,7 +9,6 @@ terraform {
   required_version = ">= 1.2.0"
 }
 provider "aws" {
-  profile = "default"
   region  = "us-west-2"
 }
 
@@ -18,6 +17,6 @@ resource "aws_instance" "app_server" {
   instance_type = "t2.micro"
   key_name = "iac-alura"           
   tags = {
-    Name = "Teste AWS"
+    Name = "Terraform Ansible Python"
   }
 }
