@@ -10,5 +10,9 @@
 *.tfstate
 *.tfstate.*
 
+# chaves
 *.pem
 *.pem*
+*.pub
+iac-prod
+iac-dev

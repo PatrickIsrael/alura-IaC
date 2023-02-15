@@ -9,14 +9,19 @@ terraform {
   required_version = ">= 1.2.0"
 }
 provider "aws" {
-  region  = "us-west-2"
+  region = var.regiao_aws
 }
 
 resource "aws_instance" "app_server" {
   ami           = "ami-0735c191cf914754d"
-  instance_type = "t2.micro"
-  key_name = "iac-alura"           
+  instance_type = var.instancia
+  key_name      = var.chave
   tags = {
-    Name = "Terraform Ansible Python"
+    Name = "Ambiente de ${var.chave}"
   }
+}
+
+resource "aws_key_pair" "chaveSSH" {
+  key_name   = var.chave
+  public_key = file("${var.chave}.pub")
 }
