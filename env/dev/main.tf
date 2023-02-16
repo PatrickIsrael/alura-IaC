@@ -3,6 +3,8 @@ module "aws-dev" {
   instancia  = "t2.micro"
   regiao_aws = "us-west-2"
   chave      = "iac-dev"
+  grupo      = "dev"
+
 }
 output "ip" {
   value = module.aws-dev.ip_publico
